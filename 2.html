@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>デモ</title>
+  <style>
+    #output {
+      color: tomato;
+      border: 1px dashed tomato;
+      padding: 5px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>デモ</h1>
+
+  <div id="output">閉じています</div>
+
+  <details>
+    これは詳細です。
+  </details>
+
+  <script>
+    const output = document.getElementById("output");
+    const details = document.querySelector("details");
+
+    details.addEventListener("toggle", event =>{
+      if (details.open) {
+        output.innerHTML = "開いています。";
+      } else {
+        output.innerHTML = "閉じています。";
+      }
+    });
+  </script>
+
+</body>
+</html>
