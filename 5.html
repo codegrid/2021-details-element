@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>デモ</title>
+  <style>
+    details {
+      margin-bottom: 8px;
+      background-color: #9dcbc4;
+      line-height: 1.5;
+      color: #000;
+    }
+    /* アイコンを消す */
+    details summary { display: block; }
+    details summary::-webkit-details-marker { display: none; }
+    /* ラベル部分のスタイル */
+    details summary span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      font-size: 21px;
+      font-weight: bold;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    /* 閉じているときスタイル */
+    details summary span::after {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.8571 6.28571C15.1667 6.28571 15.4345 6.39881 15.6607 6.625C15.8869 6.85119 16 7.11905 16 7.42857V8.57143C16 8.88095 15.8869 9.14881 15.6607 9.375C15.4345 9.60119 15.1667 9.71429 14.8571 9.71429H9.71429V14.8571C9.71429 15.1667 9.60119 15.4345 9.375 15.6607C9.14881 15.8869 8.88095 16 8.57143 16H7.42857C7.11905 16 6.85119 15.8869 6.625 15.6607C6.39881 15.4345 6.28571 15.1667 6.28571 14.8571V9.71429H1.14286C0.833332 9.71429 0.565477 9.60119 0.339286 9.375C0.113094 9.14881 0 8.88095 0 8.57143V7.42857C0 7.11905 0.113094 6.85119 0.339286 6.625C0.565477 6.39881 0.833332 6.28571 1.14286 6.28571H6.28571V1.14286C6.28571 0.833332 6.39881 0.565477 6.625 0.339286C6.85119 0.113094 7.11905 0 7.42857 0H8.57143C8.88095 0 9.14881 0.113094 9.375 0.339286C9.60119 0.565477 9.71429 0.833332 9.71429 1.14286V6.28571H14.8571Z' fill='black'/%3E%3C/svg%3E%0A");
+    }
+    /* 開いているときのスタイル */
+    details[open] summary span::after {
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='4' viewBox='0 0 16 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.6607 0.62493C15.4345 0.398739 15.1667 0.285645 14.8571 0.285645H9.71429H6.28571H1.14286C0.833332 0.285645 0.565477 0.398739 0.339286 0.62493C0.113094 0.851122 0 1.11898 0 1.4285V2.57136C0 2.88088 0.113094 3.14874 0.339286 3.37493C0.565477 3.60112 0.833332 3.71422 1.14286 3.71422H6.28571H9.71429H14.8571C15.1667 3.71422 15.4345 3.60112 15.6607 3.37493C15.8869 3.14874 16 2.88088 16 2.57136V1.4285C16 1.11898 15.8869 0.851122 15.6607 0.62493Z' fill='black'/%3E%3C/svg%3E%0A");
+    }
+    /* 詳細コンテンツ部分のスタイル */
+    details p { padding: 0 20px 20px; }
+  </style>
+</head>
+<body>
+
+  <h1>details/summary要素のカスタマイズ</h1>
+
+  <details>
+    <summary><span>CodeGridの利用料金は？</span></summary>
+    <p>月額880円（税込）です。</p>
+  </details>
+
+</body>
+</html>
