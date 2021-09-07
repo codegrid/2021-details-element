@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>デモ</title>
+</head>
+<body>
+
+  <section class="progress window">
+    <h1>Copying "Really Achieving Your Childhood Dreams"</h1>
+    <details>
+      <summary>
+        <span id="status">
+        Copying...
+        </span>
+        <progress max="375505392" value="97543282"></progress>
+        <span id="per">25%</span>
+      </summary>
+      <dl>
+      <dt>Transfer rate:</dt> <dd><span id="rate">452</span>KB/s</dd>
+      <dt>Local filename:</dt> <dd>/home/rpausch/raycd.m4v</dd>
+      <dt>Remote filename:</dt> <dd>/var/www/lectures/raycd.m4v</dd>
+      <dt>Duration:</dt> <dd>01:16:27</dd>
+      <dt>Color profile:</dt> <dd>SD (6-1-6)</dd>
+      <dt>Dimensions:</dt> <dd>320×240</dd>
+      </dl>
+    </details>
+  </section>
+
+
+  <hr>
+
+  <p>
+    <a href="">最初からやり直す</a>
+  </p>
+
+  <script>
+    const max = 375505392;
+    let value = 97543282;
+
+    const rate = document.querySelector('#rate');
+    const per = document.querySelector('#per');
+    const progress = document.querySelector('progress');
+    const status =  document.querySelector('#status');
+
+    const step = () => {
+      value += 1000000;
+      progress.value = value;
+      per.innerHTML = `${Math.floor(value / max * 100)}%`;
+
+      if(value < max) {
+        requestAnimationFrame(step);
+      } else {
+        status.innerHTML = "Complete";
+      }
+    };
+
+    requestAnimationFrame(step);
+  </script>
+
+</body>
+</html>
